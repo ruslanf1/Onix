@@ -20,7 +20,7 @@ class MainController extends BaseController
                 $leadsCold = $this->getLeadsCold($user['id']);
 
                 $data .=
-                    "Менеджер: " . $user['name'] . "\n\n" .
+                    "<b>Менеджер: " . $user['name'] . "</b>\n\n" .
                     "Кол-во событий: " . $events . "\n" .
                     "Кол-во назначенных встреч: " . $newTasks . "\n" .
                     "Кол-во проведённых встреч: " . $finishTasks . "\n" .

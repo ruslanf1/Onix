@@ -135,6 +135,7 @@ class Service
             return Http::post('https://api.telegram.org/bot' . $tgToken . '/' . 'sendMessage', [
                 'chat_id' => $chatId,
                 'text' => $data,
+                'parse_mode' => 'HTML',
             ]);
         } catch (Exception $e) {
             throw new Exception($e);
