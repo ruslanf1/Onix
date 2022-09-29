@@ -1,15 +1,21 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\Api\Amo\Authorization;
 
 use App\Http\Controllers\Controller;
 use App\Models\Access;
 use Exception;
 use Illuminate\Support\Facades\Http;
 
-class AuthController extends Controller
+class SaveController extends Controller
 {
-    public function saveToken() {
+    // Сохряняет в БД токен доступа, токен обновления и время когда заканчивается токен доступа.
+    // Возвращает токен доступа. В случае ошибки выбрасывает исключение.
+    /**
+     * @return mixed
+     * @throws Exception
+     */
+    public function saveToken(): mixed {
         try {
             $data = [
                 'client_id' => config('app.amo.client_id'),

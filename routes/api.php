@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\Amo\Authorization\SaveController;
 use App\Http\Controllers\Api\MainController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -20,6 +20,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/save_token', [AuthController::class, 'saveToken']);
+Route::get('/save_token', [SaveController::class, 'saveToken']);
 Route::get('/main', [MainController::class, 'main']);
 
