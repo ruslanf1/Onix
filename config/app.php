@@ -69,7 +69,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Europe/Moscow',
 
     /*
     |--------------------------------------------------------------------------
@@ -218,7 +218,7 @@ return [
         'client_code' => env('CLIENT_CODE'),
         'client_redirect' => env('CLIENT_REDIRECT_URI'),
         'sub_domain' => env('AMO_DOMAIN'),
-        'telegram_token' => env('TELEGRAM_TOKEN'),
+        'telegram_token' => env('TELEGRAM_BOT_TOKEN'),
         'chat_id' => env('CHAT_ID'),
     ],
 

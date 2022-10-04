@@ -1,26 +1,27 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Api\Amo\Elements\EventsController;
-use App\Http\Controllers\Api\Amo\Elements\FinishTasksController;
-use App\Http\Controllers\Api\Amo\Elements\LeadsColdController;
-use App\Http\Controllers\Api\Amo\Elements\LeadsOfferController;
-use App\Http\Controllers\Api\Amo\Elements\NewTasksController;
-use App\Http\Controllers\Api\Amo\Elements\UsersController;
-use App\Http\Controllers\Api\Telegram\CheckController;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Amo\Elements\EventsController;
+use App\Http\Controllers\Amo\Elements\FinishTasksController;
+use App\Http\Controllers\Amo\Elements\LeadsColdController;
+use App\Http\Controllers\Amo\Elements\LeadsOfferController;
+use App\Http\Controllers\Amo\Elements\NewTasksController;
+use App\Http\Controllers\Amo\Elements\UsersController;
+use App\Http\Controllers\Telegram\CheckController;
 use Exception;
 use Illuminate\Http\JsonResponse;
 
 class MainController extends Controller
 {
-    // Запрашивает по каждому пользователю количество сущностей. Составляет сообщение и отправляет в Телеграм.
-    // Возвращает строку. В случае ошибок ловит исключения и возвращает ответ.
     /**
-     * @return JsonResponse|string
+     * Запрашивает по каждому пользователю количество сущностей. Составляет сообщение и отправляет в Телеграм.
+     * Возвращает строку. В случае ошибок ловит исключения и возвращает ответ.
+     *
+     * @return JsonResponse|bool
      */
-    public function main(): JsonResponse|string {
+    public function __invoke(): JsonResponse|bool
+    {
         try {
             $data = '';
             $users = UsersController::getUsers();
@@ -40,8 +41,7 @@ class MainController extends Controller
                     "Кол-во отправленных КП: " . $leadsOffer . "\n" .
                     "Обработано из холодной базы: " . $leadsCold . "\n\n\n";
             }
-            CheckController::checkTelegram($data);
-            return 'Сообщения отправлены';
+            return CheckController::checkTelegram($data);
         } catch (Exception $e) {
             return response()->json([
                 'code' => $e->getCode(),

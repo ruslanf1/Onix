@@ -1,17 +1,18 @@
 <?php
 
-namespace App\Http\Controllers\Api\Amo\Elements;
+namespace App\Http\Controllers\Amo\Elements;
 
-use App\Http\Controllers\Api\Amo\Query\CountElements\CountController;
-use App\Http\Controllers\Api\MainController;
+use App\Http\Controllers\Amo\Query\CountElements\CountController;
+use App\Http\Controllers\MainController;
 use Exception;
 
 class LeadsColdController extends MainController
 {
-    // Принимает id пользователя. Содержит параметры фильтрации.
-    // Возвращает колличество сделок перешедших из воронки "Холодные продажи" с этапа "База для обзвона"
-    // в любые другие этапы. В случае ошибки выбрасывает исключение.
     /**
+     * Принимает id пользователя. Содержит параметры фильтрации.
+     * Возвращает колличество сделок перешедших из воронки "Холодные продажи" с этапа "База для обзвона"
+     * в любые другие этапы. В случае ошибки выбрасывает исключение.
+     *
      * @param $userId
      * @return int
      * @throws Exception

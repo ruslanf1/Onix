@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api\Amo\Authorization;
+namespace App\Http\Controllers\Amo\Authorization;
 
 use App\Http\Controllers\Controller;
 use App\Models\Access;
@@ -8,9 +8,10 @@ use Exception;
 
 class GetController extends Controller
 {
-    // Запрашивает из БД токен доступа. Проверяет время его создания.
-    // В случае если токен доступа истек, вызывает функция обновления, иначе возвращает токен доступа.
     /**
+     * Запрашивает из БД токен доступа. Проверяет время его создания.
+     * В случае если токен доступа истек, вызывает функция обновления, иначе возвращает токен доступа.
+     *
      * @return mixed
      * @throws Exception
      */

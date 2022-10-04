@@ -1,17 +1,18 @@
 <?php
 
-namespace App\Http\Controllers\Api\Amo\Query\Elements;
+namespace App\Http\Controllers\Amo\Query\Elements;
 
-use App\Http\Controllers\Api\Amo\Authorization\GetController;
+use App\Http\Controllers\Amo\Authorization\GetController;
 use App\Http\Controllers\Controller;
 use Exception;
 use Illuminate\Support\Facades\Http;
 
 class ElementsController extends Controller
 {
-    // Принимает номер страницы и параметры фильтрации. Делает запрос на AmoCRM.
-    // Возвращает объект с элементами запроса. В случае ошибки выбрасывает исключение.
     /**
+     * Принимает номер страницы и параметры фильтрации. Делает запрос на AmoCRM.
+     * Возвращает объект с элементами запроса. В случае ошибки выбрасывает исключение.
+     *
      * @param $page
      * @param $getSet
      * @return mixed
@@ -31,6 +32,5 @@ class ElementsController extends Controller
         } catch (Exception $e) {
             throw new Exception($e);
         }
-
     }
 }

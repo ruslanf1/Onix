@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api\Amo\Authorization;
+namespace App\Http\Controllers\Amo\Authorization;
 
 use App\Http\Controllers\Controller;
 use App\Models\Access;
@@ -9,9 +9,11 @@ use Illuminate\Support\Facades\Http;
 
 class EditController extends Controller
 {
-    // Принимает токен обнвления. Обновляет токен доступа по токену обновления.
-    // Возвращает токен доступа. В случае ошибки выкидвает исключение.
+
     /**
+     * Принимает токен обнвления. Обновляет токен доступа по токену обновления.
+     * Возвращает токен доступа. В случае ошибки выкидвает исключение.
+     *
      * @param $refresh_token
      * @return mixed
      * @throws Exception

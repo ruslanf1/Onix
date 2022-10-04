@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api\Amo\Authorization;
+namespace App\Http\Controllers\Amo\Authorization;
 
 use App\Http\Controllers\Controller;
 use App\Models\Access;
@@ -9,9 +9,10 @@ use Illuminate\Support\Facades\Http;
 
 class SaveController extends Controller
 {
-    // Сохряняет в БД токен доступа, токен обновления и время когда заканчивается токен доступа.
-    // Возвращает токен доступа. В случае ошибки выбрасывает исключение.
     /**
+     * Сохряняет в БД токен доступа, токен обновления и время когда заканчивается токен доступа.
+     * Возвращает токен доступа. В случае ошибки выбрасывает исключение.
+     *
      * @return mixed
      * @throws Exception
      */

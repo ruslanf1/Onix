@@ -1,7 +1,6 @@
 <?php
 
-use App\Http\Controllers\Api\Amo\Authorization\SaveController;
-use App\Http\Controllers\Api\MainController;
+use App\Http\Controllers\Amo\Authorization\SaveController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,5 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/save_token', [SaveController::class, 'saveToken']);
-Route::get('/main', [MainController::class, 'main']);
 
+Route::group(['namespace' => 'App\Http\Controllers'], function () {
+    Route::get('/main', 'MainController');
+});

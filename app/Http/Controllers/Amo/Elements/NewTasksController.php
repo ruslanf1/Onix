@@ -1,16 +1,17 @@
 <?php
 
-namespace App\Http\Controllers\Api\Amo\Elements;
+namespace App\Http\Controllers\Amo\Elements;
 
-use App\Http\Controllers\Api\Amo\Query\CountElements\FilterAndCountController;
-use App\Http\Controllers\Api\MainController;
+use App\Http\Controllers\Amo\Query\CountElements\FilterAndCountController;
+use App\Http\Controllers\MainController;
 use Exception;
 
 class NewTasksController extends MainController
 {
-    // Принимает id пользователя. Содержит параметры фильтрации.
-    // Возвращает колличество назначенных встреч. В случае ошибки выбрасывает исключение.
     /**
+     * Принимает id пользователя. Содержит параметры фильтрации.
+     * Возвращает колличество назначенных встреч. В случае ошибки выбрасывает исключение.
+     *
      * @param $userId
      * @return int
      * @throws Exception

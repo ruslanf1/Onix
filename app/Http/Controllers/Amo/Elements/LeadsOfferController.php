@@ -1,16 +1,17 @@
 <?php
 
-namespace App\Http\Controllers\Api\Amo\Elements;
+namespace App\Http\Controllers\Amo\Elements;
 
-use App\Http\Controllers\Api\Amo\Query\CountElements\CountController;
+use App\Http\Controllers\Amo\Query\CountElements\CountController;
 use App\Http\Controllers\Controller;
 use Exception;
 
 class LeadsOfferController extends Controller
 {
-    // Принимает id пользователя. Содержит параметры фильтрации.
-    // Возвращает колличество сделок, перешедших в этап "КП отправлено". В случае ошибки выбрасывает исключение.
     /**
+     * Принимает id пользователя. Содержит параметры фильтрации.
+     * Возвращает колличество сделок, перешедших в этап "КП отправлено". В случае ошибки выбрасывает исключение.
+     *
      * @param $userId
      * @return int
      * @throws Exception

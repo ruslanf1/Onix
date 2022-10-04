@@ -1,16 +1,17 @@
 <?php
 
-namespace App\Http\Controllers\Api\Amo\Query\CountElements;
+namespace App\Http\Controllers\Amo\Query\CountElements;
 
-use App\Http\Controllers\Api\Amo\Query\Elements\ElementsController;
+use App\Http\Controllers\Amo\Query\Elements\ElementsController;
 use App\Http\Controllers\Controller;
 use Exception;
 
 class CountController extends Controller
 {
-    // Принимает параметры фильтрации. Считает количество сущностей на всех страницах.
-    // Возвращает количество сущностей. В случае ошибки выбрасывает исключение.
     /**
+     * Принимает параметры фильтрации. Считает количество сущностей на всех страницах.
+     * Возвращает количество сущностей. В случае ошибки выбрасывает исключение.
+     *
      * @param $getSet
      * @return int
      * @throws Exception

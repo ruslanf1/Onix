@@ -1,16 +1,17 @@
 <?php
 
-namespace App\Http\Controllers\Api\Amo\Elements;
+namespace App\Http\Controllers\Amo\Elements;
 
-use App\Http\Controllers\Api\Amo\Query\Elements\ElementsController;
+use App\Http\Controllers\Amo\Query\Elements\ElementsController;
 use App\Http\Controllers\Controller;
 use Exception;
 
 class UsersController extends Controller
 {
-    // Запрашивает id и имена пользователей. Ограничение в 200 пользователей.
-    // Возвращает массив. В случае ошибки выбрасывает исключение.
     /**
+     * Запрашивает id и имена пользователей. Ограничение в 200 пользователей.
+     * Возвращает массив. В случае ошибки выбрасывает исключение.
+     *
      * @return array
      * @throws Exception
      */
