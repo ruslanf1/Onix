@@ -19,11 +19,11 @@ class LeadsOfferController extends Controller
     public function getLeadsOffer($userId): int {
         try {
             $getSet = [
-                'method' => 'leads',
-                'limit' => 250,
-                'filter[responsible_user_id]' => $userId,
-                'filter[pipeline_id]' => 4542283,
-                'filter[status_id]' => 41893999,
+                'method' => 'events',
+                'limit' => 100,
+                'filter[created_by]' => $userId,
+                'filter[value_after][leads_statuses][0][pipeline_id]' => 4542283,
+                'filter[value_after][leads_statuses][0][status_id]' => 41893999,
             ];
             return (new CountController)->countElement($getSet);
         } catch (Exception $e) {

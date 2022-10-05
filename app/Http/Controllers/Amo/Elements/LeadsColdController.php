@@ -21,12 +21,10 @@ class LeadsColdController extends MainController
         try {
             $getSet = [
                 'method' => 'events',
-                'limit' => 250,
+                'limit' => 100,
                 'filter[created_by]' => $userId,
-                'filter[entity]' => 'lead',
-                'filter[type]' => 'lead_status_changed',
-                'filter[before_pipeline_id]' => 4575370,
-                'filter[before_status_id]' => 42130510,
+                'filter[value_before][leads_statuses][0][pipeline_id]' => 4575370,
+                'filter[value_before][leads_statuses][0][status_id]' => 42130510,
             ];
             return (new CountController)->countElement($getSet);
         } catch (Exception $e) {

@@ -7,7 +7,6 @@ use App\Http\Controllers\Amo\Elements\FinishTasksController;
 use App\Http\Controllers\Amo\Elements\LeadsColdController;
 use App\Http\Controllers\Amo\Elements\LeadsOfferController;
 use App\Http\Controllers\Amo\Elements\NewTasksController;
-use App\Http\Controllers\Amo\Elements\UsersController;
 use App\Http\Controllers\Telegram\CheckController;
 use Exception;
 use Illuminate\Http\JsonResponse;
@@ -20,12 +19,19 @@ class MainController extends Controller
      *
      * @return JsonResponse|bool
      */
-    public function __invoke(): JsonResponse|bool
-    {
+    public function __invoke(): JsonResponse|bool {
         try {
             $data = '';
-            $users = UsersController::getUsers();
-
+            $users = [
+                [
+                    'name' => 'Виктор Жиляев',
+                    'id' => 7326229,
+                ],
+                [
+                    'name' => 'Константин',
+                    'id' => 8353078,
+                ]
+            ];
             foreach ($users as $user) {
                 $events = (new EventsController)->getEvents($user['id']);
                 $newTasks = (new NewTasksController)->getNewTasks($user['id']);

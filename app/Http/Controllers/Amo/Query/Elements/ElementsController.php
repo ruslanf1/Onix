@@ -23,7 +23,7 @@ class ElementsController extends Controller
             $accessToken = GetController::getToken();
             $subDomain = config('app.amo.sub_domain');
             $getSet += [
-                'filter[created_at]' => strtotime("today"),
+                'filter[created_at]' => strtotime("9:00"),
                 'page' => $page,
             ];
             $response = Http::withHeaders(["Authorization" => "Bearer " . $accessToken, "Content-Type" => "application/json"])

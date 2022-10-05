@@ -21,7 +21,6 @@ class NewTasksController extends MainController
             $getSet = [
                 'method' => 'tasks',
                 'limit' => 250,
-                'filter[is_completed]' => 0,
                 'filter[task_type]' => 2,
                 'filter[responsible_user_id]' => $userId,
             ];
